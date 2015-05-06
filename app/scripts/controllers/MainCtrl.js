@@ -1,20 +1,22 @@
 'use strict';
 
 angular.module('lifeGame')
-.controller('MainCtrl',['$scope','Population', function($scope, Population) {
-    $scope.activeItem = "books";
-    function createCanvasContext() {
-        var canvas = document.getElementById('field');
-        $scope.canvas = canvas.getContext("2d");
-        var populationConfig = {
-            number: 100,
-            predatorsProcent: 15,
-            herbivoresProcent: 55
-        };
-        Population.create(populationConfig,$scope.canvas); 
-        Population.paintAllPersons($scope.canvas);
+.controller('MainCtrl',['$scope','Population','Model', function($scope, Population, Model) {
+    $scope.config = null;
+    $scope.canvas = null;
+
+    function loadConfig() {
+        Model.loadConfig().then(function(config){
+            $scope.config = config;
+            createPopulation();
+        });
     }
 
-    createCanvasContext();
+    function createPopulation() {
+        var canvas = document.getElementById('field');
+        $scope.canvas = canvas.getContext("2d");
+        Population.create($scope.config, $scope.canvas); 
+    }
 
+    loadConfig();
 }]);

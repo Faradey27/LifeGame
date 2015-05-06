@@ -1,0 +1,41 @@
+{
+    "populationNumber": ,
+    "predators": {
+        "speed": 5,
+        "size": 5,
+        "reviewRadius": 15,
+        "liveTime": 10,
+        "childrenPerOnePeriod": 1,
+        "helthPoints": 50,
+        "damage": 12,
+        "stamina": 90,
+        "foodNeedForPeriod": 10,
+        "color": "#FF0000",
+        "procentOfPopulationNumber": 15
+    },
+    "herbivores": {
+        "speed": 4,
+        "size": 5,
+        "reviewRadius": 7,
+        "liveTime": 10,
+        "childrenPerOnePeriod": 2,
+        "helthPoints": 50,
+        "damage": 3,
+        "stamina": 40,
+        "foodNeedForPeriod": 10,
+        "color": "#00FF00",
+        "procentOfPopulationNumber": 55
+    },
+    "omnivorous": {
+        "speed": 4,
+        "size": 5,
+        "reviewRadius": 7,
+        "liveTime": 10,
+        "childrenPerOnePeriod": 2,
+        "helthPoints": 50,
+        "damage": 3,
+        "stamina": 40,
+        "foodNeedForPeriod": 10,
+        "color": "#0000FF"
+    }
+}
